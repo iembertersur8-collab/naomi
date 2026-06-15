@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tersur Iember Naomi | Premium Book Formatting & Publishing</title>
+    <meta name="description" content="Professional Book Formatting, Layout Design, EPUB Conversion, and Self-Publishing Support by Tersur Iember Naomi.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS VARIABLES */
+        :root {
+            --primary: #0F172A;
+            --secondary: #3B82F6;
+            --accent: #06B6D4;
+            --bg-light: #FFFFFF;
+            --bg-gray: #F8FAFC;
+            --text-dark: #1E293B;
+            --text-muted: #64748B;
+            --font-headings: 'Playfair Display', serif;
+            --font-body: 'Inter', sans-serif;
+            --transition: all 0.3s ease-in-out;
+        }
+
+        /* RESET & BASE STYLES */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-headings);
+            color: var(--primary);
+            line-height: 1.2;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--secondary);
+            font-weight: 500;
+            margin-bottom: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+        }
+
+        section {
+            padding: 6rem 0;
+        }
+
+        /* BUTTONS */
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            font-weight: 600;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+            border: 2px solid transparent;
+        }
+
+        .btn-primary {
+            background-color: var(--secondary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .btn-outline {
+            border-color: var(--primary);
+            color: var(--primary);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .btn-accent {
+            background-color: var(--accent);
+            color: white;
+        }
+
+        .btn-accent:hover {
+            background-color: #0891b2;
+        }
+
+        /* NAVIGATION */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding: 1rem 0;
+            transition: var(--transition);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-headings);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+
+        /* HERO SECTION */
+        #home {
+            padding-top: 120px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 3rem;
+        }
+
+        .services-preview {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 3rem;
+        }
+
+        .service-tag {
+            background: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            color: var(--primary);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            font-weight: 500;
+        }
+
+        /* ABOUT SECTION */
+        #about {
+            background-color: var(--bg-light);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image img {
+            border-radius: 8px;
+            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.15);
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 100%;
+            height: 100%;
+            border: 2px solid var(--secondary);
+            border-radius: 8px;
+            z-index: -1;
+        }
+
+        .about-text h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            color: var(--text-muted);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .skill-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 500;
+        }
+
+        .skill-item::before {
+            content: '✓';
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* PORTFOLIO SECTION */
+        #portfolio {
+            background-color: var(--bg-gray);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .portfolio-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+        }
+
+        .portfolio-img {
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .portfolio-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .portfolio-card:hover .portfolio-img img {
+            transform: scale(1.05);
+        }
+
+        .portfolio-info {
+            padding: 2rem;
+        }
+
+        .portfolio-category {
+            color: var(--accent);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .portfolio-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .portfolio-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* TESTIMONIALS SECTION */
+        #testimonials {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        #testimonials .section-title, #testimonials .section-subtitle {
+            color: white;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: rgba(255,255,255,0.05);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .stars {
+            color: #fbbf24;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            font-family: var(--font-headings);
+            font-size: 1.1rem;
+        }
+
+        .client-info h4 {
+            color: var(--accent);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .client-info p {
+            font-size: 0.85rem;
+            color: #cbd5e1;
+        }
+
+        /* CONTACT SECTION */
+        #contact {
+            background-color: var(--bg-light);
+        }
+
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info p {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .contact-details {
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--bg-gray);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--secondary);
+            font-weight: bold;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+
+        textarea.form-control {
+            height: 150px;
+            resize: vertical;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #020617;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            font-size: 0.9rem;
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 992px) {
+            .hero-title { font-size: 3rem; }
+            .about-grid, .contact-wrapper { grid-template-columns: 1fr; gap: 3rem; }
+            .about-image { margin-bottom: 2rem; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; } /* Mobile menu simplified for single file */
+            .hero-title { font-size: 2.5rem; }
+            .hero-buttons { flex-direction: column; }
+            .skills-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container nav-container">
+            <div class="logo">Tersur Iember Naomi</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header id="home">
+        <div class="container hero-content">
+            <h1 class="hero-title">Professional Book Formatting & Publishing Services That Make Your Book Publication-Ready</h1>
+            <p class="hero-subtitle">I help authors, coaches, and publishers transform manuscripts into professionally formatted books for Amazon KDP, and print publishing.</p>
+            <div class="hero-buttons">
+                <a href="#portfolio" class="btn btn-primary">View Portfolio</a>
+                <a href="https://www.upwork.com/freelancers/tersur" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Hire Me on Upwork</a>
+                <a href="#contact" class="btn btn-accent">Start Your Project</a>
+            </div>
+            
+            <div class="services-preview">
+                <span class="service-tag">Book Formatting</span>
+                <span class="service-tag">Interior Layout Design</span>
+                <span class="service-tag">EPUB Conversion</span>
+                <span class="service-tag">Kindle Formatting</span>
+                <span class="service-tag">Paperback & Hardcover</span>
+                <span class="service-tag">Amazon KDP Setup</span>
+            </div>
+        </div>
+    </header>
+
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <p class="section-subtitle">Expertise & Experience</p>
+            
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="WhatsApp Image 2026-06-15 at 10.10.54 AM.jpeg" alt="Tersur Iember Naomi - Professional Book Formatting Specialist">
+                </div>
+                <div class="about-text">
+                    <h3>Hello, I'm Tersur Iember Naomi.</h3>
+                    <p>I am a dedicated Book Formatting Specialist, Layout Designer, and Self-Publishing Consultant. My mission is to bridge the gap between a great manuscript and a visually stunning, publication-ready book.</p>
+                    <p>With extensive experience in the publishing industry, I understand that the interior design of your book is just as crucial as the cover. I ensure your readers have a seamless, immersive reading experience, whether they are holding a physical paperback or swiping through a Kindle device.</p>
+                    <p>I pride myself on a meticulous workflow, utilizing industry-standard tools to deliver pixel-perfect layouts, flawless EPUBs, and KDP-compliant files that pass Amazon's strict guidelines on the very first try.</p>
+                    
+                    <div class="skills-grid">
+                        <div class="skill-item">Adobe InDesign</div>
+                        <div class="skill-item">Kindle Direct Publishing (KDP)</div>
+                        <div class="skill-item">Microsoft Word Formatting</div>
+                        <div class="skill-item">EPUB Creation & Validation</div>
+                        <div class="skill-item">Print Layout Design</div>
+                        <div class="skill-item">Typography & Typesetting</div>
+                        <div class="skill-item">Book Interior Design</div>
+                        <div class="skill-item">Full Publishing Support</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-subtitle">A Showcase of Layouts, Formatting & Design</p>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-card">
+                    <div class="portfolio-img">
+                        <img src="35.jpg" alt="Journal Healing in the Rain Layout">
+                    </div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-category">Print Design & Layout</span>
+                        <h3 class="portfolio-title">Guided Journal Design</h3>
+                        <p class="portfolio-desc">Complete interior layout and formatting for "Healing in the Rain", a guided journal requiring delicate typography, ample writing space, and elegant visual spacing.</p>
+                        <a href="#contact" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.85rem;">View Case Study</a>
+                    </div>
+                </div>
+
+                <div class="portfolio-card">
+                    <div class="portfolio-img">
+                        <img src="36.jpg" alt="Editorial Magazine Style Layout">
+                    </div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-category">Editorial Formatting</span>
+                        <h3 class="portfolio-title">Modern Non-Fiction</h3>
+                        <p class="portfolio-desc">High-end editorial formatting featuring dynamic text wrapping, bold typography, and sophisticated image integration for a compelling reading experience.</p>
+                        <a href="#contact" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.85rem;">View Case Study</a>
+                    </div>
+                </div>
+
+                <div class="portfolio-card">
+                    <div class="portfolio-img">
+                        <img src="10.jpg" alt="Business Book Layout">
+                    </div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-category">Business Book Formatting</span>
+                        <h3 class="portfolio-title">Turning Sales Into Wealth</h3>
+                        <p class="portfolio-desc">Clean, professional layout for a financial guide. Included structured list designs, pull quotes, and distinct chapter headers optimized for Amazon KDP Print.</p>
+                        <a href="#contact" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.85rem;">View Case Study</a>
+                    </div>
+                </div>
+
+                <div class="portfolio-card">
+                    <div class="portfolio-img">
+                        <img src="18.jpg" alt="The Business of IT Book Cover">
+                    </div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-category">Kindle Publishing</span>
+                        <h3 class="portfolio-title">The Business of IT</h3>
+                        <p class="portfolio-desc">Seamless EPUB conversion and Kindle formatting for a tech industry book. Ensured 100% responsiveness across all e-reader devices and screen sizes.</p>
+                        <a href="#contact" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.85rem;">View Case Study</a>
+                    </div>
+                </div>
+
+                <div class="portfolio-card">
+                    <div class="portfolio-img">
+                        <img src="33.jpg" alt="Table of Contents Formatting">
+                    </div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-category">Print Book Interior</span>
+                        <h3 class="portfolio-title">Classic Typography Layout</h3>
+                        <p class="portfolio-desc">Traditional print interior design focusing on flawless kerning, widows/orphans control, and a perfectly aligned Table of Contents for seamless navigation.</p>
+                        <a href="#contact" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.85rem;">View Case Study</a>
+                    </div>
+                </div>
+
+                <div class="portfolio-card">
+                    <div class="portfolio-img">
+                        <img src="37.jpg" alt="Visual Heavy Book Layout">
+                    </div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-category">Image-Heavy Formatting</span>
+                        <h3 class="portfolio-title">Unmanaged Personality</h3>
+                        <p class="portfolio-desc">Complex layout balancing heavy text blocks with high-resolution imagery. Perfect for memoirs, photo books, or premium digital PDF publications.</p>
+                        <a href="#contact" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.85rem;">View Case Study</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="https://www.upwork.com/freelancers/tersur" target="_blank" rel="noopener noreferrer" class="btn btn-primary">See More on Upwork</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials">
+        <div class="container">
+            <h2 class="section-title">Client Success Stories</h2>
+            <p class="section-subtitle">What Authors Say About Working With Me</p>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Naomi transformed my messy Word document into a beautiful, professional paperback. It passed Amazon KDP review on the very first upload!"</p>
+                    <div class="client-info">
+                        <h4>Sarah Jenkins</h4>
+                        <p>Author of "Mindful Mornings"</p>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Her EPUB conversion is flawless. I've worked with others where the formatting breaks on older Kindles, but Naomi's code is clean and perfect across all devices."</p>
+                    <div class="client-info">
+                        <h4>Marcus Thorne</h4>
+                        <p>Indie Fiction Publisher</p>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"As a business coach, my book needed to look premium. The interior layout design Tersur provided elevated my entire brand. Highly recommended."</p>
+                    <div class="client-info">
+                        <h4>Dr. Elena Rostova</h4>
+                        <p>Consultant & Speaker</p>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Fast, communicative, and incredibly skilled with Adobe InDesign. She handled my complex tables and charts without breaking a sweat."</p>
+                    <div class="client-info">
+                        <h4>David Chen</h4>
+                        <p>Educational Content Creator</p>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"I was so overwhelmed by the self-publishing process. Naomi didn't just format my book; she guided me through the entire KDP setup. A true expert."</p>
+                    <div class="client-info">
+                        <h4>Rachel McAdams</h4>
+                        <p>First-time Author</p>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Best freelancer I've hired on Upwork. Her attention to typography, margins, and the reader experience is unmatched in the indie publishing space."</p>
+                    <div class="client-info">
+                        <h4>James Wilson</h4>
+                        <p>Serial Entrepreneur</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h2 class="section-title" style="text-align: left;">Ready to Publish Your Book Professionally?</h2>
+                    <p>Whether you need a simple EPUB conversion or a complex interior print layout, I'm here to bring your manuscript to life. Reach out today for a custom quote or consultation.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">✉</div>
+                            <div>
+                                <h4 style="color: var(--text-dark); font-family: var(--font-body);">Email Me</h4>
+                                <a href="mailto:tersuriember109@gmail.com">tersuriember109@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">U</div>
